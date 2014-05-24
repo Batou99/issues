@@ -4,13 +4,16 @@ defmodule Issues.Mixfile do
   def project do
     [ app: :issues,
       version: "0.0.1",
-      elixir: "~> 0.13.3-dev",
+      elixir: "~> 0.13.2",
       deps: deps ]
   end
 
   # Configuration for the OTP application
   def application do
-    [mod: { Issues, [] }]
+    [
+      mod: { Issues, [] },
+      applications: [:httpotion]
+    ]
   end
 
   # Returns the list of dependencies in the format:
@@ -20,7 +23,8 @@ defmodule Issues.Mixfile do
   # { :barbat, "~> 0.1", github: "elixir-lang/barbat" }
   defp deps do
     [
-      {:httpotion, github: "myfreeweb/httpotion"}
+      {:httpotion, github: "myfreeweb/httpotion"},
+      {:jsx, github: "talentdeficit/jsx"}
     ]
   end
 end
