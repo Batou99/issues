@@ -4,7 +4,7 @@ defmodule Issues.Mixfile do
   def project do
     [ app: :issues,
       version: "0.0.1",
-      elixir: "~> 0.12.5-dev",
+      elixir: "~> 0.13.3-dev",
       deps: deps ]
   end
 
@@ -19,6 +19,8 @@ defmodule Issues.Mixfile do
   # To specify particular versions, regardless of the tag, do:
   # { :barbat, "~> 0.1", github: "elixir-lang/barbat" }
   defp deps do
-    []
+    [
+      {:httpotion, github: "myfreeweb/httpotion"}
+    ]
   end
 end
